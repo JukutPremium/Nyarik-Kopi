@@ -8,6 +8,11 @@
     font-style: normal;
 }
 
+body.preloader-active {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
 
 body {
     margin: 0;

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="preloader-active">
 
     <style>
             /* Styling for the preloader */
@@ -84,7 +84,7 @@
     <!-- Home Page Logo -->
       <div class="hero-container">
         <div class="image-section">
-          <img src="asset/logoputih.png" class="img-fluid" data-aos="zoom-in" data-aos-duration="2000" />
+          <img src="asset/logoputih.png" class="img-fluid">
         </div>
       </div>
   
@@ -373,28 +373,39 @@
             <!-- GSAP Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
-      // GSAP animation for preloader
-      window.addEventListener('load', () => {
-        // Fade in the logo
-        gsap.to('.preloader-logo', { opacity: 1, duration: 1, y: 0, ease: "power3.out" });
-        
-        // Fade in the text
-        gsap.to('.loading-text', { opacity: 1, duration: 1, delay: 0.5 });
+window.addEventListener('load', () => {
+  // Menambahkan kelas 'preloader-active' untuk menonaktifkan scroll
+  document.body.classList.add('preloader-active');
 
-        // After 3 seconds, fade out the preloader
-        gsap.to('.preloader', {
-          opacity: 0,
-          duration: 1.5,
-          delay: 3,
-          onComplete: () => {
-            document.querySelector('.preloader').style.display = 'none';
-            document.querySelector('.content').style.display = 'block';
+  // GSAP animation for preloader
+  gsap.to('.preloader-logo', { opacity: 1, duration: 1, y: 0, ease: "power3.out" });
 
-            // Animate the content after preloader disappears
-            gsap.fromTo('.content', { opacity: 0 }, { opacity: 1, duration: 1 });
-          },
-        });
-      });
+  gsap.to('.loading-text', { opacity: 1, duration: 1, delay: 0.5 });
+
+  // Setelah 3 detik, preloader menghilang dan scroll diaktifkan kembali
+  gsap.to('.preloader', {
+    opacity: 0,
+    duration: 1.5,
+    delay: 3,
+    onComplete: () => {
+      document.querySelector('.preloader').style.display = 'none';
+      
+      // Menghapus kelas 'preloader-active' untuk mengaktifkan kembali scroll
+      document.body.classList.remove('preloader-active');
+      
+      // Animasi untuk logo di hero (zoom in dan fade in)
+      gsap.fromTo('.image-section img', 
+        { scale: 0.5, opacity: 0 },   // Mulai dari ukuran 50% dan transparansi 0
+        { scale: 1, opacity: 1, duration: 2, ease: "power3.out" } // Zoom ke ukuran penuh dengan fade in
+      );
+
+      // Menampilkan konten setelah preloader selesai
+      gsap.fromTo('.content', { opacity: 0 }, { opacity: 1, duration: 1 });
+    },
+  });
+});
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
