@@ -1,10 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+
+
+  /* Preloader */
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #315a44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+
+  .preloader img {
+    width: 100%;
+    opacity: 0;
+  }
+
+  .preloader .loading-text {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    opacity: 0;
+  }
+
+  .content {
+    display: none;
+  }
 
 html {
     overflow-x: hidden;
@@ -24,12 +65,6 @@ html {
     padding: 0px 20px;
     
 }
-
-/* .navbar-nav .nav-link:hover {
-    transform: scale(1.1);
-    background-color: rgb(151, 202, 158);
-    border-radius: 5px;
-} */
 
 /* Navbar Toggler Styles */
 
@@ -66,28 +101,6 @@ html {
 opacity: 100;
 }
 } 
-
- 
-
- 
-
-/* Landing Page Video Background */
-/* .video-landingpage {
-    height: 100vh;
-}
-
-.video-container {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    filter: brightness(40%);
-    background-image: url(Assets-landingpage/contentvideo.gif);
-    background-repeat: no-repeat;
-} */
 
 /* Hero Section */
 .hero-container {
@@ -157,7 +170,7 @@ opacity: 100;
 
 
 /* About us */
-.text2 {
+/* .text2 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -166,22 +179,14 @@ opacity: 100;
     margin-top: 200px;
 }
 
-.text2 img {
-    width: 400px;
-    max-width: 600px;
-    height: auto;
-    margin: 0 20px;
-    border-radius: 10px;
-}
-
-.text2 .textBox {
+.textBox {
     width: 100%;
     max-width: 600px;
     padding: 0 20px;
 }
 
 .text2 .textBox h2 {
-    color: rgb(110, 153, 101);
+    color:  rgb(49, 90, 68);
     font-size: 2em;
     margin-bottom: 0px;
 }
@@ -202,9 +207,46 @@ opacity: 100;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-}
+} */
+
+.about-us {
+    height: 80vh;
+    padding-top: 16rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
+  .about-us h2 {
+    color: rgb(49, 90, 68);
+  }
+  
+  .about-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+  }
 
 /* preview */
+
+.preview {
+    height: 100%;
+    width: 100vw;
+    background-color:  rgb(49, 90, 68);
+    padding: 2.5rem 0rem;
+}
+
+.preview h2 {
+    font-size: 5rem;
+    color: white;
+}
 
 .card-img-overlay {
     opacity: 0;
@@ -219,8 +261,13 @@ opacity: 100;
 
 /* FAQ */
 
+.faq h2 {
+    font-size: 4rem;
+
+}
+
 .faq-margin {
-    margin-top: 100px;
+    margin-top: .8rem;
 }
 
 .accordion-button {
@@ -283,6 +330,11 @@ opacity: 100;
         text-align: center;
     }
 
+    .preview h2 {
+        font-size: 2.8rem;
+        padding: 1rem 0rem;
+    }
+
     .text-section h1 {
         font-size: 29px;
     }
@@ -304,6 +356,18 @@ opacity: 100;
     .text2 .textBox h2 {
         text-align: center  ;
     }
+
+    .about-us {
+        padding: 50px 0;
+      }
+      
+      .about-content h2 {
+        font-size: 2rem;
+      }
+      
+      .about-content p {
+        font-size: 1rem;
+      }
 
 }
 
