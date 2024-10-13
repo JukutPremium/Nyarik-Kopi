@@ -1,1 +1,0 @@
-Cari apa kau disini ?
